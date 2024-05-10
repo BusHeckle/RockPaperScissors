@@ -52,21 +52,21 @@ function getComputerChoice(){
     }
 }
 
-function getHumanChoice() {
-    let answer = parseInt(prompt("Choose 0 for rock, 1 for paper and 2 for scissors"));
-    if (answer === 0){
-        return "rock";
-    }
-    else if (answer === 1){
-        return "paper";
-    }
-    else {
-        return "scissors";
-    }
-}
+// function getHumanChoice() {
+//     let answer = parseInt(prompt("Choose 0 for rock, 1 for paper and 2 for scissors"));
+//     if (answer === 0){
+//         return "rock";
+//     }
+//     else if (answer === 1){
+//         return "paper";
+//     }
+//     else {
+//         return "scissors";
+//     }
+// }
 
 
-function playGame() {
+//function playGame() {
     
     let humanScore = 0;
     let computerScore = 0;
@@ -102,12 +102,30 @@ function playGame() {
             } else return console.log("Draw!");
         }
 
-        for (let i = 0; i <5; i++) {
-            let humanSelection = getHumanChoice();
-            let computerSelection = getComputerChoice();
-            playRound(humanSelection, computerSelection);
-            console.log('Human Score:' + humanScore);
-            console.log('Computer Score:' + computerScore);    
-        }
-    console.log("Final Score - You: " + humanScore + " Computer: " +computerScore);
-}
+        // for (let i = 0; i <5; i++) {
+        //     let humanSelection = getHumanChoice();
+        //     let computerSelection = getComputerChoice();
+        //     playRound(humanSelection, computerSelection);
+        //     console.log('Human Score:' + humanScore);
+        //     console.log('Computer Score:' + computerScore);    
+        // }
+    //console.log("Final Score - You: " + humanScore + " Computer: " +computerScore);
+//}
+
+// For now, remove the logic that plays exactly five rounds.
+
+//playGame();
+
+// You will likely have to refactor (rework/rewrite) your original code to make it work for this. That’s OK! Reworking old code is an important part of a programmer’s life.
+
+// //Add an event listener 
+// to the buttons that call your playRound function with the correct 
+// playerSelection every time a button is clicked. (you can keep the 
+// console.logs for this step)
+
+const rock = document.querySelector("#rock");
+rock.onclick = () => playRound("rock", getComputerChoice());
+const paper = document.querySelector("#paper");
+paper.onclick = () => playRound("paper", getComputerChoice());
+const scissors = document.querySelector("#scissors");
+scissors.onclick = () =>   playRound("scissors", getComputerChoice());
